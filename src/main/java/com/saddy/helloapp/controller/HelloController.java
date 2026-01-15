@@ -1,0 +1,23 @@
+package com.saddy.helloapp.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class HelloController {
+
+    @GetMapping("/hello")
+    public String hello() {
+        return "Hello Spring Boot🙂";
+    }
+
+    @GetMapping("/greet")
+    public String greet() {
+        return "Hello, Welcome to Spring Boot!";
+    }
+
+    @GetMapping("hi")
+    public String greet(String name) {
+        return "Hello, " + name + "!";
+    }
+}
