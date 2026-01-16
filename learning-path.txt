@@ -1,0 +1,202 @@
+🔵 WEEK 1 (Days 1–7): Spring Boot ka DNA samjho
+
+Goal: “Code ka flow samajh aa raha hai”
+
+Day 1
+
+Spring Boot kya solve karta hai (config hell se chutkara)
+
+Project structure dekho (controller, service, repo)
+
+App run karo, break karo, phir run karo 😄
+
+Day 2
+
+@RestController, @GetMapping
+
+Ek simple /health API banao
+
+Browser + Postman se hit karo
+
+Day 3
+
+Request–Response lifecycle
+
+@RequestParam vs @PathVariable
+
+2–3 APIs likho (no DB yet)
+
+Day 4
+
+@Service layer introduce karo
+
+Controller me logic mat rakho (ye devs notice karte hain 👀)
+
+Day 5
+
+Exception handling (@ExceptionHandler)
+
+Proper HTTP status codes
+
+Day 6
+
+Logging (SLF4J)
+
+Logs ko QA nazar se dekho: kya missing hai?
+
+Day 7
+
+Week recap
+
+Flow explain karne ki practice (khud se bol ke)
+
+👉 Agar tum is point pe flow explain kar sakte ho, tum safe ho.
+
+🟡 WEEK 2 (Days 8–14): Database + Real Dev Feel
+
+Goal: “Ab ye actual app lag rahi hai”
+
+Day 8
+
+JPA intro
+
+@Entity, @Id
+
+In-memory DB (H2)
+
+Day 9
+
+Repository (JpaRepository)
+
+Basic CRUD
+
+Day 10
+
+Controller → Service → Repository full flow
+
+Debugger chala ke dekho
+
+Day 11
+
+Validation (@NotNull, @Size)
+
+Invalid request handling
+
+Day 12
+
+Relationships (One-to-Many)
+
+User → Orders
+
+Day 13
+
+Pagination & sorting
+
+Real-world feel aata hai yaha
+
+Day 14
+
+Week recap
+
+Code clean-up (readability > cleverness)
+
+🟢 WEEK 3 (Days 15–21): Dev + QA Superpower Mode
+
+Goal: “Is banda ko system samajh aata hai”
+
+Day 15
+
+Unit testing basics (JUnit)
+
+Service test likho
+
+Day 16
+
+Integration testing (SpringBootTest)
+
+Happy + failure paths
+
+Day 17
+
+Edge cases add karo (QA brain unleashed 😈)
+
+Day 18
+
+API error contracts (consistent error response)
+
+Day 19
+
+Configs (application.yml)
+
+Profiles (dev / test)
+
+Day 20
+
+Simple performance thought
+“Agar 10x traffic aaye to kya tootega?”
+
+Day 21
+
+Week recap
+
+Ek short doc likho (how system works)
+
+🔴 WEEK 4 (Days 22–30): Confidence + Office Ready
+
+Goal: “Dev team ke saath baithne me hesitation na ho”
+
+Day 22
+
+Spring Security basics (just concept)
+
+Auth vs AuthZ samjho
+
+Day 23
+
+Basic auth / dummy security
+
+Day 24
+
+Global exception + logging polish
+
+Day 25
+
+Refactoring
+
+Code smells identify karo
+
+Day 26
+
+Production mindset
+Logs, errors, observability
+
+Day 27
+
+Read office Spring Boot code (no touching)
+
+Map concepts
+
+Day 28
+
+Ek improvement idea note karo
+
+Day 29
+
+Explain project end-to-end (out loud)
+
+Day 30
+
+Confidence day 😎
+Tum Spring Boot expert nahi, capable dev ho.
+
+🧩 Daily Practice ka rule
+
+Har din khud se ye teen sawal:
+
+Aaj kya naya samjha?
+
+Aaj kya break ho sakta hai?
+
+Isko test kaise todunga?
+
+Ye tumhe average dev se upar rakhega.

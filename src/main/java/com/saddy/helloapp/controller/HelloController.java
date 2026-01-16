@@ -16,8 +16,4 @@ public class HelloController {
         return "Hello, Welcome to Spring Boot!";
     }
 
-    @GetMapping("hi")
-    public String greet(String name) {
-        return "Hello, " + name + "!";
-    }
 }
