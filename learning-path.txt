@@ -49,7 +49,6 @@ Day 7
 Week recap
 
 Flow explain karne ki practice (khud se bol ke)
-
 👉 Agar tum is point pe flow explain kar sakte ho, tum safe ho.
 
 🟡 WEEK 2 (Days 8–14): Database + Real Dev Feel
@@ -190,13 +189,8 @@ Confidence day 😎
 Tum Spring Boot expert nahi, capable dev ho.
 
 🧩 Daily Practice ka rule
-
-Har din khud se ye teen sawal:
-
-Aaj kya naya samjha?
-
-Aaj kya break ho sakta hai?
-
-Isko test kaise todunga?
-
-Ye tumhe average dev se upar rakhega.
+  - Har din khud se ye teen sawal:
+  - Aaj kya naya samjha?
+  - Aaj kya break ho sakta hai?
+  - Isko test kaise todunga?
+  - Ye tumhe average dev se upar rakhega.

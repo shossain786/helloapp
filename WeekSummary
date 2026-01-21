@@ -1,0 +1,15 @@
+Week One
+
+Purpose of the Application:
+This is a sample Spring Boot application built to understand the fundamentals of the Spring Boot framework, including REST APIs, validation, exception handling, and clean architectural layering.
+
+Role of Packages:
+Packages are used to clearly separate responsibilities, which improves readability, maintainability, and scalability of the application.
+
+The root package is `com.saddy.helloapp`, where the `HelloappApplication` class is present. Spring Boot scans all sub-packages under this root.
+
+Package responsibilities:
+- controller: Handles HTTP requests and responses. Controllers remain thin and delegate all business logic to the service layer.
+- service: Contains the core business logic of the application. All validations beyond basic annotations and business rules are implemented here.
+- exception: Defines custom business exceptions and a global exception handler to provide consistent and meaningful error responses.
+- model: Defines the structure of request and response objects, along with validation rules using annotations.
