@@ -23,7 +23,7 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
     }
 
-    @ExceptionHandler(Exception.class)
+    @ExceptionHandler(InvalidUserException.class)
     public ResponseEntity<ErrorResponse> handleInvalidUser(InvalidUserException ex) {
         ErrorResponse error = new ErrorResponse(
                 400,

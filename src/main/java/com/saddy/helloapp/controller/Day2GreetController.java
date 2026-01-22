@@ -24,7 +24,7 @@ public class Day2GreetController {
     @GetMapping("/add")
     public String addNum(@RequestParam(required = false) Integer a,
                          @RequestParam(required = false) Integer b) {
-        IO.println("a: " + a + ", b: " + b);
+        System.out.println("a: " + a + ", b: " + b);
         if (a == null || b == null) {
             return "Param missing!";
         }
