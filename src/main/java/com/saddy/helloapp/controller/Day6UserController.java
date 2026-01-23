@@ -19,7 +19,7 @@ public class Day6UserController {
 
     @PostMapping("/users4")
     public ResponseEntity<String> addUser(@Valid @RequestBody UserV2 user) {
-        userService.createUser(user);
+//        userService.createUser(user);
         return new ResponseEntity<>("User has been created", HttpStatus.CREATED);
     }
 }
