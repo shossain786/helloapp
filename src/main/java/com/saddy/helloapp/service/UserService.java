@@ -2,12 +2,14 @@ package com.saddy.helloapp.service;
 
 import com.saddy.helloapp.exception.DuplicateEmailException;
 import com.saddy.helloapp.exception.InvalidUserException;
+import com.saddy.helloapp.exception.UserNotFoundException;
 import com.saddy.helloapp.model.UserEntity;
 import com.saddy.helloapp.model.UserV2;
 import com.saddy.helloapp.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -29,5 +31,14 @@ public class UserService {
 //    get all users
     public List<UserEntity> getUsers(){
         return userRepository.findAll();
+    }
+
+//    day 10: get user by id
+    public UserEntity getUserById(Long id){
+        Optional<UserEntity> user = userRepository.findById(id);
+        if (user.isEmpty()) {
+            throw new UserNotFoundException("User not found with id " + id);
+        }
+        return user.get();
     }
 }
