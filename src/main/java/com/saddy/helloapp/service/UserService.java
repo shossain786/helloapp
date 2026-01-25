@@ -4,7 +4,6 @@ import com.saddy.helloapp.exception.DuplicateEmailException;
 import com.saddy.helloapp.exception.InvalidUserException;
 import com.saddy.helloapp.exception.UserNotFoundException;
 import com.saddy.helloapp.model.UserEntity;
-import com.saddy.helloapp.model.UserV2;
 import com.saddy.helloapp.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
@@ -40,5 +39,17 @@ public class UserService {
             throw new UserNotFoundException("User not found with id " + id);
         }
         return user.get();
+    }
+
+//    Update user
+    public UserEntity updateUser(Long id, UserEntity user){
+        UserEntity userEntity = userRepository.findById(id)
+                .orElseThrow(() -> new UserNotFoundException("User not found with id: " + id));
+
+        userEntity.setName(user.getName());
+        userEntity.setAge(user.getAge());
+        userEntity.setEmail(user.getEmail());
+
+        return userRepository.save(userEntity);
     }
 }
