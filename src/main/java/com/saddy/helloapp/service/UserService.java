@@ -6,7 +6,11 @@ import com.saddy.helloapp.exception.UserNotFoundException;
 import com.saddy.helloapp.model.UserEntity;
 import com.saddy.helloapp.model.UserPatchRequest;
 import com.saddy.helloapp.repository.UserRepository;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import org.springframework.data.domain.Page;
 
 import java.util.List;
 import java.util.Optional;
@@ -69,5 +73,13 @@ public class UserService {
         }
 
         return userRepository.save(user);
+    }
+
+//    get users with pages, sorting
+    public Page<UserEntity> getUsers(int page, int size, String sortBy) {
+        Pageable pageable = PageRequest.of(page, size, Sort.by(sortBy).ascending());
+
+        return userRepository.findAll(pageable);
+
     }
 }
