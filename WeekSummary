@@ -13,3 +13,26 @@ Package responsibilities:
 - service: Contains the core business logic of the application. All validations beyond basic annotations and business rules are implemented here.
 - exception: Defines custom business exceptions and a global exception handler to provide consistent and meaningful error responses.
 - model: Defines the structure of request and response objects, along with validation rules using annotations.
+---
+
+Golden rule (remember this forever)
+
+Entity = DB model
+DTO = API contract
+
+----
+🔹 DTOs protect you from future changes
+
+ We can:
+    - Change DB
+    - Add fields
+    - Refactor Entity
+
+ Without breaking API clients.
+---
+
+🔹 Never return Entity in production APIs
+
+ - Ever.
+ - Even if “it’s a small app”.
+---

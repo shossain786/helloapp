@@ -8,7 +8,7 @@ public class UserEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     private String name;
     private String email;
@@ -16,7 +16,7 @@ public class UserEntity {
 
     public UserEntity() {}
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 

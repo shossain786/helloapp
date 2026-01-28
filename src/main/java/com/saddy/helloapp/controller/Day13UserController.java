@@ -17,15 +17,15 @@ public class Day13UserController {
         this.userService = userService;
     }
 
-    @GetMapping("/users13")
-    public ResponseEntity<Page<UserEntity>> getUsers(
-            @RequestParam(defaultValue = "0") int page,
-            @RequestParam(defaultValue = "2") int size,
-            @RequestParam(defaultValue = "id") String sortBy
-    ) {
-        Page<UserEntity> users = userService.getUsers(page, size, sortBy);
+//    @GetMapping("/users13")
+//    public ResponseEntity<Page<UserEntity>> getUsers(
+//            @RequestParam(defaultValue = "0") int page,
+//            @RequestParam(defaultValue = "2") int size,
+//            @RequestParam(defaultValue = "id") String sortBy
+//    ) {
+//        Page<UserEntity> users = userService.getUsers(page, size, sortBy);
+//
+//        return new ResponseEntity<>(users, HttpStatus.OK);
 
-        return new ResponseEntity<>(users, HttpStatus.OK);
-
-    }
+//    }
 }

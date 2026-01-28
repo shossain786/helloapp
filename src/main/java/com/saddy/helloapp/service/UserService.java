@@ -1,5 +1,6 @@
 package com.saddy.helloapp.service;
 
+import com.saddy.helloapp.dto.UserResponse;
 import com.saddy.helloapp.exception.DuplicateEmailException;
 import com.saddy.helloapp.exception.InvalidUserException;
 import com.saddy.helloapp.exception.UserNotFoundException;
@@ -76,10 +77,29 @@ public class UserService {
     }
 
 //    get users with pages, sorting
-    public Page<UserEntity> getUsers(int page, int size, String sortBy) {
+    public Page<UserResponse> getUsers(int page, int size, String sortBy) {
         Pageable pageable = PageRequest.of(page, size, Sort.by(sortBy).ascending());
 
-        return userRepository.findAll(pageable);
+        Page<UserEntity> users = userRepository.findAll(pageable);
+//        return userRepository.findAll(pageable);
+        return  users.map(this::toResponse);
 
     }
+
+    private UserResponse toResponse(UserEntity userEntity){
+        return new UserResponse(
+                userEntity.getId(),
+                userEntity.getName(),
+                userEntity.getAge()
+        );
+    }
+
+//    get by id with dto control
+public UserResponse getUserById14(Long id){
+    UserEntity user = userRepository.findById(id).orElseThrow(
+            () -> new UserNotFoundException("User not found with id: " + id)
+    );
+
+    return toResponse(user);
+}
 }
