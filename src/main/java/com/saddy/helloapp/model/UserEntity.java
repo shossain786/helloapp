@@ -13,6 +13,15 @@ public class UserEntity {
     private String name;
     private String email;
     private int age;
+    private boolean active = true; //soft delete flag
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
 
     public UserEntity() {}
 

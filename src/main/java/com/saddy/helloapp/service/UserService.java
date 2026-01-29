@@ -94,12 +94,34 @@ public class UserService {
         );
     }
 
-//    get by id with dto control
-public UserResponse getUserById14(Long id){
-    UserEntity user = userRepository.findById(id).orElseThrow(
-            () -> new UserNotFoundException("User not found with id: " + id)
-    );
+    //    get by id with dto control
+    public UserResponse getUserById14(Long id){
+        UserEntity user = userRepository.findById(id).orElseThrow(
+                () -> new UserNotFoundException("User not found with id: " + id)
+        );
 
-    return toResponse(user);
-}
+        return toResponse(user);
+    }
+
+//    Hard delete
+    public void deleteUserById(Long id){
+        UserEntity user = userRepository.findById(id).orElseThrow(
+                () -> new UserNotFoundException("User not found with id: " + id)
+        );
+        userRepository.delete(user);
+    }
+
+//    Soft delete
+    public void softDeleteUserById(Long id){
+        UserEntity user = userRepository.findById(id).orElseThrow(
+                () -> new UserNotFoundException("User not found with id: " + id)
+        );
+
+        if (!user.isActive()) {
+            return;
+        }
+
+        user.setActive(false);
+        userRepository.save(user);
+    }
 }
