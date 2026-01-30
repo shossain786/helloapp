@@ -124,4 +124,20 @@ public class UserService {
         user.setActive(false);
         userRepository.save(user);
     }
+//    get Active user by id
+    public UserResponse getUserByIdActive(Long id) {
+        UserEntity user = userRepository.findByIdAndActiveTrue(id).orElseThrow(
+                () -> new UserNotFoundException("User not found with id: " + id)
+        );
+
+        return toResponse(user);
+    }
+
+//    get All active users
+    public Page<UserResponse> getUsersActive(int page, int size,  String sortBy) {
+        Pageable pageable = PageRequest.of(page, size, Sort.by(sortBy));
+
+        Page<UserEntity> users = userRepository.findAllByActiveTrue(pageable);
+        return  users.map(this::toResponse);
+    }
 }
