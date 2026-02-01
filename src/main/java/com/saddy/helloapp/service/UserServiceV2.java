@@ -41,4 +41,11 @@ public class UserServiceV2 {
                 userEntity.getAge()
         );
     }
+
+
+    public Page<UserResponse> searchActiveUser(String search, int page, int size, String sortBy) {
+        Pageable pageable = PageRequest.of(page, size, Sort.by(sortBy));
+        Page<UserEntity> users = userRepositoryV1.searchActiveUsers(search, pageable);
+        return users.map(this::toResponse);
+    }
 }
