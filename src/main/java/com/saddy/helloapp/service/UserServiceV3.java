@@ -9,11 +9,13 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import static com.saddy.helloapp.specification.UserSpecifications.*;
 
 @Service
 public class UserServiceV3 {
+
     UserRepositoryV2 userRepositoryV2;
     public UserServiceV3(UserRepositoryV2 userRepositoryV2) {
         this.userRepositoryV2 = userRepositoryV2;
@@ -42,5 +44,11 @@ public class UserServiceV3 {
                 userEntity.getName(),
                 userEntity.getAge()
         );
+    }
+
+    @Transactional
+    public void createAndLog(UserEntity userEntity) {
+        userRepositoryV2.save(userEntity);
+//        logRepository.log() // if this step failed then complete transaction will be roll back
     }
 }
