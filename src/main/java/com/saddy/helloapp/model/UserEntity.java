@@ -15,6 +15,9 @@ public class UserEntity {
     private int age;
     private boolean active = true; //soft delete flag
 
+    @Version
+    private Long version;
+
     public boolean isActive() {
         return active;
     }

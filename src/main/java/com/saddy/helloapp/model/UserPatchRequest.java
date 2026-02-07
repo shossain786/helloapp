@@ -1,6 +1,5 @@
 package com.saddy.helloapp.model;
 
-import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Min;
 
