@@ -7,6 +7,9 @@ import com.saddy.helloapp.exception.UserNotFoundException;
 import com.saddy.helloapp.model.UserEntity;
 import com.saddy.helloapp.model.UserPatchRequest;
 import com.saddy.helloapp.repository.UserRepository;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -39,6 +42,7 @@ public class UserService {
     }
 
 //    day 10: get user by id
+    @Cacheable(value = "users", key = "#id") //Day 27 learning
     public UserEntity getUserById(Long id){
         Optional<UserEntity> user = userRepository.findById(id);
         if (user.isEmpty()) {
@@ -48,6 +52,7 @@ public class UserService {
     }
 
 //    Update user
+    @CachePut(value = "users", key = "#id") // at the time of updating the user cache must be updated
     public UserEntity updateUser(Long id, UserEntity user){
         UserEntity userEntity = userRepository.findById(id)
                 .orElseThrow(() -> new UserNotFoundException("User not found with id: " + id));
@@ -104,6 +109,7 @@ public class UserService {
     }
 
 //    Hard delete
+    @CacheEvict(value = "users", key = "#id")
     public void deleteUserById(Long id){
         UserEntity user = userRepository.findById(id).orElseThrow(
                 () -> new UserNotFoundException("User not found with id: " + id)
