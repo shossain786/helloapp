@@ -36,3 +36,32 @@ To use JWT we need below three dependencies
     <scope>runtime</scope>
 </dependency>
 ```
+## Summary of 30 Days Learning
+---
+***Layered Architecture***
+- Controller
+- Services
+- Repository
+- DTO vs Entity
+- Exception Handing via controller service
+
+***Transactions***
+- Rollback rules
+- Propagation(Required, Requires_new)
+- isolation awareness
+- Optimistic locking
+- Pessimistic Locking
+
+***Performance***
+- N+1 problem
+- Lazy vs Eager
+- Fetch joins
+- Basic catching
+
+***Security***
+- Basic auth
+- Stateless JWT
+- Custom Filter
+- SecurityFilter Chain Config
+- Weak Key Handling
+- Role based accessed
